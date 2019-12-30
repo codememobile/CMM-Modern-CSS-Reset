@@ -1,0 +1,188 @@
+@viewport {
+  /* META FALLBACK FOR VIEWPORT */
+  zoom: 1;
+  width: device-width;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+html {
+  /* line-height: 1.15; */
+  /* or... */
+  /*line-height: 140%; */
+  /* Considered the most ideal under UX standards */
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%; /* BASE 10 */
+}
+
+/* Define the "system" font family for browser to use local fonts if other font's don't load right = boost in render speed */
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
+    local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-display: fallback;
+  /* DEFINE HOW FONTS ARE LOADED IN BROWSER IN MODERN / FUTURE BROWSERS */
+}
+
+body {
+  font-family: "system"; /* Fallback to system font if google font or @fontface not working right or no font is specified */
+  box-sizing: border-box;
+  /* prefixes needed here, autoprefix doesn't rec. font-smoothing */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  z-index: -1;
+  font-size: 1.7rem;
+  color: #333; /* Never use solid black for text color */
+}
+
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  background: transparent;
+}
+
+/* Clear Fix */
+.clear {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+hr {
+  height: 0; /* Fix height in firefox */
+}
+
+/* Add the correct text decoration in Chrome, Edge, and Safari. */
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+/* Add the correct font weight in Edge and Safari. */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* Consistent styling for monospace fonts */
+code,
+kbd,
+samp,
+pre {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-size: 1rem;
+}
+
+small {
+  font-size: 80%;
+}
+
+/* Prevent 'sub' and 'sup' elements from affecting the line height in all browsers. */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Forms */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[type="search"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+:focus {
+  outline: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+summary {
+  display: list-item;
+}
