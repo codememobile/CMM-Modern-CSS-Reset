@@ -1,4 +1,4 @@
-# CMM-Modern-CSS-Reset
+# CMM-Modern-CSS-Reset 2020
 A reset that I put together/tested with help from other MIT resets.
 
 This file will be updated as seen fit. Should suffice for your normalization needs!
